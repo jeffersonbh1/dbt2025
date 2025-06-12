@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 28 33 56;
+    --color-secondary: 32 41 69;
+    --color-accent: 83 215 106;
+    --color-text-primary: 255 255 255;
+    --color-text-secondary: 156 163 175;
+    --color-border: 59 70 95;
+    --color-success: 83 215 106;
+    --color-warning: 249 115 22;
+    --color-error: 239 68 68;
+    --color-info: 59 130 246;
+  }
+
+  body {
+    @apply bg-primary text-text-primary font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-opacity-80;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-secondary rounded-lg p-4 border border-border shadow-md;
+  }
+
+  .input {
+    @apply bg-primary border border-border rounded-md p-2 text-text-primary
+    focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200 flex items-center justify-center;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-primary hover:bg-opacity-90;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary border border-border hover:bg-opacity-90;
+  }
+
+  .btn-danger {
+    @apply btn bg-error hover:bg-opacity-90;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-md text-text-secondary hover:bg-secondary hover:text-text-primary transition-all duration-200;
+  }
+
+  .nav-link.active {
+    @apply bg-secondary text-accent;
+  }
+}
